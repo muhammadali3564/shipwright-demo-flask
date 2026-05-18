@@ -1,0 +1,35 @@
+﻿{% extends "base.html" %}
+{% block title %}Home - Shipwright Demo{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="hero">
+    <span class="badge badge-shipwright mb-3">PYTHON FLASK DEMO</span>
+    <h1 class="mb-4">Hello from <span style="color:#3b82f6;">Shipwright</span></h1>
+    <p class="lead mb-5">This Flask application was automatically built and deployed by Shipwright.<br/>From a GitHub URL to a live web app in under 2 minutes.</p>
+    <div class="d-flex gap-3 justify-content-center">
+      <a href="/about" class="btn btn-primary btn-lg">Learn More</a>
+      <a href="/contact" class="btn btn-outline-light btn-lg">Try the Form</a>
+    </div>
+  </div>
+  <div class="row g-4 mb-5">
+    <div class="col-md-4">
+      <div class="card p-4 h-100">
+        <h3>AI-Generated Dockerfiles</h3>
+        <p class="text-muted">Shipwright uses Claude AI to analyze your repository and generate optimized Dockerfiles automatically.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card p-4 h-100">
+        <h3>Self-Healing Deploys</h3>
+        <p class="text-muted">When builds fail, the AI reads the error logs and generates a corrected Dockerfile, then retries.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card p-4 h-100">
+        <h3>Cloud Agnostic</h3>
+        <p class="text-muted">Deploy to AWS, GCP, Azure, or self-host. Built on Terraform, runs anywhere Docker runs.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

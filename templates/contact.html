@@ -1,0 +1,47 @@
+﻿{% extends "base.html" %}
+{% block title %}Contact - Shipwright Demo{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <h1 class="mb-4">Contact</h1>
+  {% if success %}
+  <div class="alert alert-success">Message received! Your submission was processed by the live Flask backend.</div>
+  {% endif %}
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card p-4">
+        <h4 class="mb-3">Send a message</h4>
+        <form method="POST" action="/contact">
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" name="name" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea name="message" rows="4" class="form-control" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card p-4">
+        <h4 class="mb-3">Recent messages ({{ messages|length }})</h4>
+        {% if messages %}
+          {% for m in messages|reverse %}
+          <div class="mb-3 pb-3 border-bottom border-secondary">
+            <strong>{{ m.name }}</strong> <small class="text-muted">&lt;{{ m.email }}&gt;</small>
+            <p class="mt-1 mb-0">{{ m.message }}</p>
+          </div>
+          {% endfor %}
+        {% else %}
+          <p class="text-muted">No messages yet. Submit one to see it appear here.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

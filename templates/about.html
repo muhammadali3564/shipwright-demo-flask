@@ -1,0 +1,29 @@
+﻿{% extends "base.html" %}
+{% block title %}About - Shipwright Demo{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <h1 class="mb-4">About this app</h1>
+  <div class="card p-4">
+    <p class="lead">This is a small but real-looking Flask web application built to demonstrate the Shipwright deployment platform.</p>
+    <hr class="border-secondary"/>
+    <h4 class="mt-3">Tech stack</h4>
+    <ul>
+      <li>Python 3.11</li>
+      <li>Flask 3.0 web framework</li>
+      <li>Gunicorn WSGI server</li>
+      <li>Bootstrap 5 frontend</li>
+      <li>Docker containerization</li>
+    </ul>
+    <h4 class="mt-3">How it was deployed</h4>
+    <p>The user pasted this repository URL into the Shipwright dashboard. Shipwright:</p>
+    <ol>
+      <li>Auto-detected the default branch from GitHub</li>
+      <li>Analyzed the repository structure and identified it as a Python Flask app</li>
+      <li>Found the existing Dockerfile and used it directly</li>
+      <li>Created an application in Coolify via API</li>
+      <li>Triggered the build and assigned a public URL</li>
+    </ol>
+    <p class="mb-0 text-muted">All without any manual configuration.</p>
+  </div>
+</div>
+{% endblock %}
